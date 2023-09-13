@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="790434ec-a940-4e4d-9ba4-e52451813046" name="更改" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\Maven3.6.3\m2" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="F:\Maven3.6.3\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2V3fDhfJ6E8xXdT5iUpAVpptGI3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/IntelliJ IDEA 2022.3.3/IntelliJ IDEA 2022.3.3-Data/SpringCloudAlibaba",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "spring.configuration.checksum": "a8bbcabaf7d78eaed89986424ece2749",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela" />
+      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\UserMgmt\src\main\java\com\delicious" />
+      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\UserMgmt\src\main\java\com\delicious\pojo" />
+      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\AuthMgmt\src\main\java\com\delicious" />
+      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\AuthMgmt\src\main\java\com\delicious\pojo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.delicious" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.delicious.pojo.entity" />
+      <recent name="com.delicious.controller" />
+      <recent name="com.delicious.entity" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.LoginModuleApplication">
+    <configuration name="CodeGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="codeUtil.CodeGenerator" />
+      <module name="AuthMgmt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="codeUtil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="codeUtil.CodeGenerator" />
+      <module name="UserMgmt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthMgmtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="AuthMgmt" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.delicious.AuthMgmtApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.delicious.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginModuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="LoginModule" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.delicious.LoginModuleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMgmtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="UserMgmt" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.delicious.UserMgmtApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.LoginModuleApplication" />
+      <item itemvalue="Spring Boot.UserMgmtApplication" />
+      <item itemvalue="Spring Boot.AuthMgmtApplication" />
+      <item itemvalue="应用程序.CodeGenerator" />
+      <item itemvalue="应用程序.CodeGenerator (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.AuthMgmtApplication" />
+        <item itemvalue="应用程序.CodeGenerator (1)" />
+        <item itemvalue="应用程序.CodeGenerator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="790434ec-a940-4e4d-9ba4-e52451813046" name="更改" comment="" />
+      <created>1694069570605</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694069570605</updated>
+      <workItem from="1694069571904" duration="50958000" />
+      <workItem from="1694395271552" duration="26953000" />
+      <workItem from="1694429053147" duration="7883000" />
+      <workItem from="1694480768637" duration="2142000" />
+      <workItem from="1694489127146" duration="3492000" />
+      <workItem from="1694572630049" duration="7520000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/exception/ErrorExceptionHandler.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
