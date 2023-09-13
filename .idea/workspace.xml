@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790434ec-a940-4e4d-9ba4-e52451813046" name="更改" comment="2023/9/13&#10;第一次提交，初建用户，权限，登录模块">
+    <list default="true" id="790434ec-a940-4e4d-9ba4-e52451813046" name="更改" comment="2023/9/13&#10;代码生产器报错，在子工程添加依赖">
+      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/LoginUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/impl/SecurityUserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/util/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoginModule/src/test/java/testSecurity/PasswordEncoderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthMgmt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LoginModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/test/java/codeUtil/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/test/java/codeUtil/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserMgmt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/pojo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/pojo/entity/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,13 +30,26 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="89ef2f2c-6d4b-45f1-a9e2-cadd7b3b7e01" />
+        <option name="url" value="https://github.com/DeliciousYellow/Cheela.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
@@ -48,7 +72,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2V3fDhfJ6E8xXdT5iUpAVpptGI3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -113,7 +139,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LoginModuleApplication">
+  <component name="RunManager" selected="JUnit.PasswordEncoderTest.testPasswordEncoder">
     <configuration name="CodeGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="codeUtil.CodeGenerator" />
       <module name="AuthMgmt" />
@@ -136,6 +162,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasswordEncoderTest.testPasswordEncoder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LoginModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testSecurity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testSecurity" />
+      <option name="MAIN_CLASS_NAME" value="testSecurity.PasswordEncoderTest" />
+      <option name="METHOD_NAME" value="testPasswordEncoder" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,6 +210,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.PasswordEncoderTest.testPasswordEncoder" />
       <item itemvalue="Spring Boot.LoginModuleApplication" />
       <item itemvalue="Spring Boot.UserMgmtApplication" />
       <item itemvalue="Spring Boot.AuthMgmtApplication" />
@@ -176,6 +219,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PasswordEncoderTest.testPasswordEncoder" />
         <item itemvalue="Spring Boot.AuthMgmtApplication" />
         <item itemvalue="应用程序.CodeGenerator (1)" />
         <item itemvalue="应用程序.CodeGenerator" />
@@ -195,7 +239,7 @@
       <workItem from="1694429053147" duration="7883000" />
       <workItem from="1694480768637" duration="2142000" />
       <workItem from="1694489127146" duration="3492000" />
-      <workItem from="1694572630049" duration="7842000" />
+      <workItem from="1694572630049" duration="14754000" />
     </task>
     <task id="LOCAL-00001" summary="2023/9/13&#10;第一次提交，初建用户，权限，登录模块">
       <created>1694581878419</created>
@@ -204,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694581878419</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2023/9/13&#10;代码生产器报错，在子工程添加依赖">
+      <created>1694582047358</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694582047358</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +263,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2023/9/13&#10;第一次提交，初建用户，权限，登录模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023/9/13&#10;第一次提交，初建用户，权限，登录模块" />
+    <MESSAGE value="2023/9/13&#10;代码生产器报错，在子工程添加依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/9/13&#10;代码生产器报错，在子工程添加依赖" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -221,6 +273,11 @@
           <url>file://$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/exception/ErrorExceptionHandler.java</url>
           <line>21</line>
           <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/impl/SecurityUserDetailsServiceImpl.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
