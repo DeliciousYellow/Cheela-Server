@@ -18,7 +18,6 @@ import java.io.Serial;
 @Builder
 @TableName("t_user")
 public class User extends BaseEntity {
-
     @Serial
     private static final long serialVersionUID = 1L;
     @TableId(value = "user_id", type = IdType.AUTO)

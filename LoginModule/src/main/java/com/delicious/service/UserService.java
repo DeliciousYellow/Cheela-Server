@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.*;
 public interface UserService {
 
     @GetMapping("/{id}")
-    Result baseQueryById(@PathVariable Integer id);
+    Result<User> baseQueryById(@PathVariable Integer id);
 
     @GetMapping("/")
-    Result baseQueryByEntity(User user);
+    Result<User> baseQueryByEntity(User user);
     @GetMapping("/{pageIndex}/{pageSize}")
-    Result baseQueryPageByEntity(User user, @PathVariable int pageIndex, @PathVariable int pageSize);
+    Result<User> baseQueryPageByEntity(User user, @PathVariable int pageIndex, @PathVariable int pageSize);
 
     @PostMapping("/")
-    Result baseAdd(@RequestBody User user) throws ErrorException;
+    Result<User> baseAdd(@RequestBody User user) throws ErrorException;
 
     @PutMapping("/")
-    Result baseEdit(@RequestBody User user) throws ErrorException;
+    Result<User> baseEdit(@RequestBody User user) throws ErrorException;
 
     @DeleteMapping("/{id}")
-    Result baseDelById(@PathVariable String id) throws ErrorException;
+    Result<User> baseDelById(@PathVariable String id) throws ErrorException;
 
     @DeleteMapping("/")
-    Result baseDelByIds(@RequestParam("ids") String ids) throws ErrorException;
+    Result<User> baseDelByIds(@RequestParam("ids") String ids) throws ErrorException;
 }
