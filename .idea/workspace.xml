@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790434ec-a940-4e4d-9ba4-e52451813046" name="更改" comment="" />
+    <list default="true" id="790434ec-a940-4e4d-9ba4-e52451813046" name="更改" comment="2023/9/13&#10;第一次提交，初建用户，权限，登录模块">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMgmt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +23,9 @@
         <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
@@ -40,6 +48,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2V3fDhfJ6E8xXdT5iUpAVpptGI3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/IntelliJ IDEA 2022.3.3/IntelliJ IDEA 2022.3.3-Data/SpringCloudAlibaba",
+    "last_opened_file_path": "D:/IntelliJ IDEA 2022.3.3/IntelliJ IDEA 2022.3.3-Data/Cheela",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -186,12 +195,24 @@
       <workItem from="1694429053147" duration="7883000" />
       <workItem from="1694480768637" duration="2142000" />
       <workItem from="1694489127146" duration="3492000" />
-      <workItem from="1694572630049" duration="7520000" />
+      <workItem from="1694572630049" duration="7842000" />
     </task>
+    <task id="LOCAL-00001" summary="2023/9/13&#10;第一次提交，初建用户，权限，登录模块">
+      <created>1694581878419</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694581878419</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2023/9/13&#10;第一次提交，初建用户，权限，登录模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/9/13&#10;第一次提交，初建用户，权限，登录模块" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
