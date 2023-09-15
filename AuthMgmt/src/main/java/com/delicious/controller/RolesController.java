@@ -2,7 +2,6 @@ package com.delicious.controller;
 
 import com.delicious.exception.ErrorException;
 import com.delicious.pojo.Result;
-import com.delicious.pojo.entity.Permissions;
 import com.delicious.pojo.entity.Roles;
 import com.delicious.service.RolesService;
 import org.springframework.web.bind.annotation.*;
@@ -38,7 +37,7 @@ public class RolesController extends BaseController<RolesService, Roles>{
 
     @Override
     @PostMapping("/")
-    protected Result baseAdd(@RequestBody Roles roles) throws ErrorException{
+    protected Result baseAdd(@RequestBody Roles roles) throws ErrorException {
         return super.baseAdd(roles);
     }
 

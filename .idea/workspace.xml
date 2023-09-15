@@ -4,22 +4,80 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790434ec-a940-4e4d-9ba4-e52451813046" name="更改" comment="2023/9/13&#10;代码生产器报错，在子工程添加依赖">
-      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/LoginUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/impl/SecurityUserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/util/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LoginModule/src/test/java/testSecurity/PasswordEncoderTest.java" afterDir="false" />
+    <list default="true" id="790434ec-a940-4e4d-9ba4-e52451813046" name="更改" comment="2023/9/15">
+      <change afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/AddAndEditGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/pojo/AddAndEditGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/pojo/entity/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthMgmt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/controller/RelationRolePermissionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/controller/RelationRolePermissionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/controller/RolesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/controller/RolesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/exception/ErrorExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/exception/CustomExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/pojo/ResultEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/pojo/ResultEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/src/test/java/codeUtil/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/src/test/java/codeUtil/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/AuthMgmtApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/config/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/controller/BaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/controller/PermissionsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/controller/RelationRolePermissionsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/controller/RolesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/exception/ErrorException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/exception/ErrorExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/mapper/PermissionsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/mapper/RelationRolePermissionsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/mapper/RolesMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/CodeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/ResultEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/entity/BaseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/entity/Permissions$PermissionsBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/entity/Permissions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/entity/RelationRolePermissions$RelationRolePermissionsBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/entity/RelationRolePermissions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/entity/Roles$RolesBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/pojo/entity/Roles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/service/PermissionsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/service/RelationRolePermissionsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/service/RolesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/service/impl/PermissionsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/service/impl/RelationRolePermissionsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthMgmt/target/classes/com/delicious/service/impl/RolesServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/LoginModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/exception/ErrorExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/exception/CustomExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/LoginUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/LoginUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/ResultEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/ResultEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/pojo/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginModule/src/test/java/codeUtil/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/test/java/codeUtil/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/impl/SecurityUserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/impl/SecurityUserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/LoginModuleApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/config/DepartConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/controller/BaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/exception/ErrorException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/exception/ErrorExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/CodeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/ResultEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/entity/BaseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/entity/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/pojo/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginModule/target/classes/com/delicious/service/UserService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserMgmt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/exception/ErrorExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/exception/CustomExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/pojo/ResultEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/pojo/ResultEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/pojo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/src/main/java/com/delicious/pojo/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMgmt/src/test/java/codeUtil/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMgmt/src/test/java/codeUtil/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMgmt/target/classes/application.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +96,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -99,7 +157,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "vcs.Git",
-    "spring.configuration.checksum": "a8bbcabaf7d78eaed89986424ece2749",
+    "spring.configuration.checksum": "62cbf45a2a50bd08ecee0a1fb64d56ee",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -109,10 +167,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela" />
+      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\AuthMgmt\src\main\java\com\delicious\exception" />
+      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\LoginModule\src\main\java\com\delicious\exception" />
       <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\UserMgmt\src\main\java\com\delicious" />
       <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\UserMgmt\src\main\java\com\delicious\pojo" />
-      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\AuthMgmt\src\main\java\com\delicious" />
-      <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela\AuthMgmt\src\main\java\com\delicious\pojo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IntelliJ IDEA 2022.3.3\IntelliJ IDEA 2022.3.3-Data\Cheela" />
@@ -122,6 +180,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.delicious.pojo" />
       <recent name="com.delicious.pojo.entity" />
       <recent name="com.delicious.controller" />
       <recent name="com.delicious.entity" />
@@ -139,7 +198,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PasswordEncoderTest.testPasswordEncoder">
+  <component name="RunManager" selected="Spring Boot.LoginModuleApplication">
     <configuration name="CodeGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="codeUtil.CodeGenerator" />
       <module name="AuthMgmt" />
@@ -195,6 +254,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BlockChainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="BlockChain" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.delicious.BlockChainApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginModuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="LoginModule" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.delicious.LoginModuleApplication" />
@@ -211,8 +277,9 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PasswordEncoderTest.testPasswordEncoder" />
-      <item itemvalue="Spring Boot.LoginModuleApplication" />
+      <item itemvalue="Spring Boot.BlockChainApplication" />
       <item itemvalue="Spring Boot.UserMgmtApplication" />
+      <item itemvalue="Spring Boot.LoginModuleApplication" />
       <item itemvalue="Spring Boot.AuthMgmtApplication" />
       <item itemvalue="应用程序.CodeGenerator" />
       <item itemvalue="应用程序.CodeGenerator (1)" />
@@ -239,7 +306,9 @@
       <workItem from="1694429053147" duration="7883000" />
       <workItem from="1694480768637" duration="2142000" />
       <workItem from="1694489127146" duration="3492000" />
-      <workItem from="1694572630049" duration="14754000" />
+      <workItem from="1694572630049" duration="32607000" />
+      <workItem from="1694659284770" duration="14485000" />
+      <workItem from="1694741140994" duration="714000" />
     </task>
     <task id="LOCAL-00001" summary="2023/9/13&#10;第一次提交，初建用户，权限，登录模块">
       <created>1694581878419</created>
@@ -255,7 +324,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694582047358</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2023/9/13&#10;在子工程添加代码生成器依赖之后，会导致mybatis-plus有个类冲突，删了依赖，然后把测试类里面的生成器代码注释了">
+      <created>1694588988013</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694588988014</updated>
+    </task>
+    <task id="LOCAL-00004" summary="2023/9/13&#10;在子工程添加代码生成器依赖之后，会导致mybatis-plus有个类冲突，删了依赖，然后把测试类里面的生成器代码注释了">
+      <created>1694588999129</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694588999129</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,20 +347,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2023/9/13&#10;第一次提交，初建用户，权限，登录模块" />
     <MESSAGE value="2023/9/13&#10;代码生产器报错，在子工程添加依赖" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023/9/13&#10;代码生产器报错，在子工程添加依赖" />
+    <MESSAGE value="2023/9/13&#10;在子工程添加代码生成器依赖之后，会导致mybatis-plus有个类冲突，删了依赖，然后把测试类里面的生成器代码注释了" />
+    <MESSAGE value="2023/9/15" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/9/15" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AuthMgmt/src/main/java/com/delicious/exception/ErrorExceptionHandler.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="51" />
+          <url>file://$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/controller/LoginController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/service/impl/SecurityUserDetailsServiceImpl.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="52" />
+          <url>file://$PROJECT_DIR$/LoginModule/src/main/java/com/delicious/controller/LoginController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

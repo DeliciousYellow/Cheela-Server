@@ -15,6 +15,7 @@ public enum ResultEnum {
     UPDATE_FAIL(540,"修改失败"),
     SELECT_FAIL(510,"查询失败"),
 
+    PARAMETER_ERROR(550,"参数不符合规范"),
     ERROR(599,"发生错误");
     private final Integer code;
     private final String message;

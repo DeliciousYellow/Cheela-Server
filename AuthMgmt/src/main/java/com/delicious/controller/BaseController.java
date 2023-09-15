@@ -1,8 +1,6 @@
 package com.delicious.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.Update;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -12,8 +10,6 @@ import com.delicious.pojo.ResultEnum;
 import com.delicious.pojo.entity.BaseEntity;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -65,18 +61,18 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
         boolean bool;
         try {
             bool = service.save(m);
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             throw new ErrorException(e);
         }
         return bool ? Result.build(ResultEnum.INSERT_SUCCESS) : Result.build(ResultEnum.INSERT_FAIL);
     }
 
     @Operation(summary = "基础功能-修改", method = "PUT")
-    protected Result baseEdit(@RequestBody @Validated(value = {Update.class}) M m) throws ErrorException {
+    protected Result baseEdit(@RequestBody M m) throws ErrorException {
         boolean bool;
         try {
             bool = service.updateById(m);
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             throw new ErrorException(e);
         }
         return bool ? Result.build(ResultEnum.UPDATE_SUCCESS) : Result.build(ResultEnum.UPDATE_FAIL);
@@ -87,7 +83,7 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
         boolean bool;
         try {
             bool = service.removeById(id);
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             throw new ErrorException(e);
         }
         return bool ? Result.build(ResultEnum.DELETE_SUCCESS) : Result.build(ResultEnum.DELETE_FAIL);
@@ -98,7 +94,7 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
         String[] idsArr;
         try {
             idsArr = ids.split(StringPool.COMMA);
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             throw new ErrorException(e);
         }
         if (idsArr.length == 0) {

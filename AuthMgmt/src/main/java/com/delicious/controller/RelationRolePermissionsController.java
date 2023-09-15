@@ -37,7 +37,7 @@ public class RelationRolePermissionsController extends BaseController<RolesServi
 
     @Override
     @PostMapping("/")
-    protected Result baseAdd(@RequestBody Roles roles) throws ErrorException{
+    protected Result baseAdd(@RequestBody Roles roles) throws ErrorException {
         return super.baseAdd(roles);
     }
 
