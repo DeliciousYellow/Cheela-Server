@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: WorkflowMgmt
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        namespace: 6c02f402-3bd7-46fd-88bb-da90a3986304
+        username: nacos
+        password: nacos
+  config:
+    import:
+      - optional:nacos:BaseConfig.${spring.cloud.nacos.config.file-extension}
+      - optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
