@@ -2,6 +2,8 @@ package com.delicious.exception;
 
 import com.delicious.pojo.Result;
 import com.delicious.pojo.ResultEnum;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -30,16 +32,30 @@ public class CustomExceptionHandler {
     }
 
     /**
-     * 处理@Validated注解判断参数不符合定义时抛出的异常
+     * 处理@Validated 注解判断参数不符合定义时抛出的异常
      * @return Result
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody
     public Result handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder stringBuilder = new StringBuilder();
         for (FieldError error : e.getBindingResult().getFieldErrors()) {
-            stringBuffer.append(error.getDefaultMessage()).append("/n");
+            stringBuilder.append(error.getDefaultMessage()).append("/n");
         }
-        return Result.build(ResultEnum.PARAMETER_ERROR).setMessage(stringBuffer.toString());
+        return Result.build(ResultEnum.PARAMETER_ERROR).setMessage(stringBuilder.toString());
+    }
+
+    /**
+     * 处理@Valid 注解判断参数不符合定义时抛出的异常
+     * @return Result
+     */
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseBody
+    public Result handleConstraintViolationException(ConstraintViolationException e) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (ConstraintViolation constraintViolation : e.getConstraintViolations()) {
+            stringBuilder.append(constraintViolation.getMessageTemplate()).append("/n");
+        }
+        return Result.build(ResultEnum.PARAMETER_ERROR).setMessage(stringBuilder.toString());
     }
 }

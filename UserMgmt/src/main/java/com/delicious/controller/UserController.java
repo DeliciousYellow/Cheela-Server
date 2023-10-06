@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/user")
 @RestController
+@Validated(AddAndEditGroup.class)
 public class UserController extends BaseController<UserService, User> {
     @Override
     @GetMapping("/{id}")
@@ -41,7 +42,7 @@ public class UserController extends BaseController<UserService, User> {
 
     @Override
     @PostMapping("/")
-    protected Result baseAdd(@RequestBody @Validated(AddAndEditGroup.class) User user) throws ErrorException {
+    protected Result baseAdd(@RequestBody User user) throws ErrorException {
         return super.baseAdd(user);
     }
 

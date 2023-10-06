@@ -1,0 +1,32 @@
+server:
+  port: 9000
+
+spring:
+  cloud:
+    gateway:
+      # 网关全局跨域配置
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:9527"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+        # 解决options请求被拦截的问题
+        add-to-simple-url-handler-mapping: true
+
+      routes:
+        - id: login
+          uri: http://localhost:8083
+          predicates:
+            - Path=/login/**
+
+        - id: user
+          uri: http://localhost:8081/user
+          predicates:
+            - Path=/user/**
+
+        - id: workflowInfo
+          uri: http://localhost:8084/workflowInfo
+          predicates:
+            - Path=/workflowInfo/**

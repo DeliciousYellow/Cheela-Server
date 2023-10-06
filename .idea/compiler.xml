@@ -9,7 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="UserMgmt" />
         <module name="LoginModule" />
+        <module name="WorkflowMgmt" />
         <module name="AuthMgmt" />
+        <module name="GateWay" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,8 +23,10 @@
       <module name="AuthMgmt" options="-parameters" />
       <module name="BlockChain" options="-parameters" />
       <module name="Cheela" options="" />
+      <module name="GateWay" options="-parameters" />
       <module name="LoginModule" options="-parameters" />
       <module name="UserMgmt" options="-parameters" />
+      <module name="WorkflowMgmt" options="-parameters" />
     </option>
   </component>
 </project>

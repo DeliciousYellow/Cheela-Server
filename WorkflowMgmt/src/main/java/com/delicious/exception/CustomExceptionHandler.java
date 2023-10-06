@@ -21,7 +21,7 @@ public class CustomExceptionHandler {
         //TODO 统一异常处理应该更加细分
         String stackTrace = exceptionSout(e);
         log.error(stackTrace);
-        return Result.build(ResultEnum.ERROR).setMessage(stackTrace);
+        return Result.build(ResultEnum.ERROR).setMessage(e.getMessage());
     }
     public String exceptionSout(Exception e){
         StringWriter sw = new StringWriter();

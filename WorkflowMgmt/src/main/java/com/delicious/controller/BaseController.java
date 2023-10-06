@@ -9,6 +9,7 @@ import com.delicious.pojo.Result;
 import com.delicious.pojo.ResultEnum;
 import com.delicious.pojo.entity.BaseEntity;
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+//@Validated(AddAndEditGroup.class)
 public abstract class BaseController<S extends IService<M>, M extends BaseEntity> {
 
     @Autowired
@@ -34,11 +37,11 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
 
     @Operation(summary = "基础功能-条件查询", method = "GET")
     protected Result baseQueryByEntity(M entity) {
-        if (entity == null) {
-            Page<M> page = service.page(new Page<>(1, 10));//从第1页查询最多10条记录,service.page()之后page对象中就包含了查询结果了
+        if (entity.IsNull()) {
+            Page<M> page = service.page(new Page<>(1, 10));
             List<M> list = page.getRecords();
             //TODO 按时间降序排序，获取最近的10条记录
-            return Result.build(ResultEnum.SELECT_SUCCESS, list).setMessage("查询成功，但似乎没有查询条件生效，一共有" + page.getTotal() + "条数据符合条件，已返回" + list.size() + "条");
+            return Result.build(ResultEnum.SELECT_SUCCESS, list).setMessage("查询成功，但没有查询条件生效，一共有" + page.getTotal() + "条数据符合条件，已返回" + list.size() + "条");
         }
         LambdaQueryWrapper<M> wrapper = new LambdaQueryWrapper<>();
         List<M> list = service.list(wrapper.setEntity(entity));
@@ -48,19 +51,17 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
     @Operation(summary = "基础功能-条件查询分页", method = "GET")
     protected Result baseQueryPageByEntity(M entity, @PathVariable int pageIndex, @PathVariable int pageSize) {
         LambdaQueryWrapper<M> wrapper = new LambdaQueryWrapper<>();
-        //默认从第1页查询最多10条记录   service.page()之后page对象中就包含了查询结果了
         Page<M> MPage = new Page<>(pageIndex, pageSize);
-        //TODO 这里分页没有生效！
         Page<M> page = service.page(MPage, wrapper.setEntity(entity));
         List<M> list = page.getRecords();
         return Result.build(ResultEnum.SELECT_SUCCESS, list).setMessage("查询成功，一共有" + page.getTotal() + "条数据符合条件，已返回" + list.size() + "条");
     }
 
     @Operation(summary = "基础功能-新增", method = "POST")
-    protected Result baseAdd(@RequestBody M m) throws ErrorException {
+    protected Result baseAdd(@RequestBody @Valid M entity) throws ErrorException {
         boolean bool;
         try {
-            bool = service.save(m);
+            bool = service.save(entity);
         } catch (RuntimeException e) {
             throw new ErrorException(e);
         }
@@ -68,10 +69,10 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
     }
 
     @Operation(summary = "基础功能-修改", method = "PUT")
-    protected Result baseEdit(@RequestBody M m) throws ErrorException {
+    protected Result baseEdit(@RequestBody @Valid M entity) throws ErrorException {
         boolean bool;
         try {
-            bool = service.updateById(m);
+            bool = service.updateById(entity);
         } catch (RuntimeException e) {
             throw new ErrorException(e);
         }

@@ -19,6 +19,9 @@
         <module>UserMgmt</module>
         <module>AuthMgmt</module>
         <module>LoginModule</module>
+        <module>WorkflowMgmt</module>
+
+        <module>GateWay</module>
     </modules>
 
     <properties>
@@ -31,6 +34,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.web3j</groupId>
+                <artifactId>core</artifactId>
+                <version>4.8.3</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
