@@ -1,16 +1,16 @@
 package com.delicious.controller;
 
-import com.delicious.exception.ErrorException;
 import com.delicious.pojo.AddAndEditGroup;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.entity.WorkflowInfo;
 import com.delicious.service.WorkflowInfoService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author 黄灿
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/workflowInfo")
-public class WorkflowInfoController extends BaseController<WorkflowInfoService, WorkflowInfo>{
+public class WorkflowInfoController extends BaseController<WorkflowInfoService, WorkflowInfo> {
     @Override
     @GetMapping("/{id}")
     protected Result baseQueryById(@PathVariable Integer id) {
@@ -39,25 +39,31 @@ public class WorkflowInfoController extends BaseController<WorkflowInfoService, 
 
     @Override
     @PostMapping("/")
-    protected Result baseAdd(@RequestBody @Validated(AddAndEditGroup.class) WorkflowInfo workflowInfo) throws ErrorException {
+    protected Result baseAdd(@RequestBody @Validated(AddAndEditGroup.class) WorkflowInfo workflowInfo) {
         return super.baseAdd(workflowInfo);
+    }
+
+    @PostMapping("/AddWorkflowInfoAndSteps")
+    @Transactional
+    protected Result AddWorkflowInfoAndSteps(@RequestBody String resData) {
+        return service.AddWorkflowInfoAndSteps(resData);
     }
 
     @Override
     @PutMapping("/")
-    protected Result baseEdit(@RequestBody @Validated(AddAndEditGroup.class) WorkflowInfo workflowInfo) throws ErrorException {
+    protected Result baseEdit(@RequestBody @Validated(AddAndEditGroup.class) WorkflowInfo workflowInfo) {
         return super.baseEdit(workflowInfo);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) throws ErrorException {
+    protected Result baseDelById(@PathVariable String id) {
         return super.baseDelById(id);
     }
 
     @Override
     @DeleteMapping("/")
-    protected Result baseDelByIds(@RequestParam("ids") String ids) throws ErrorException {
+    protected Result baseDelByIds(@RequestParam("ids") String ids) {
         return super.baseDelByIds(ids);
     }
 }

@@ -1,7 +1,6 @@
 package com.delicious.controller;
 
 
-import com.delicious.exception.ErrorException;
 import com.delicious.pojo.AddAndEditGroup;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.entity.Step;
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2023-10-06
  */
 @RestController
-@RequestMapping("/steps")
+@RequestMapping("/step")
 public class StepController extends BaseController<StepService, Step>{
 
     @Override
@@ -39,26 +38,27 @@ public class StepController extends BaseController<StepService, Step>{
         return super.baseQueryPageByEntity(step, pageIndex, pageSize);
     }
 
+    @Override
     @PostMapping("/")
-    protected Result AddSteps(@RequestBody Step step) throws ErrorException {
+    protected Result baseAdd(@RequestBody @Validated(AddAndEditGroup.class) Step step) {
         return super.baseAdd(step);
     }
 
     @Override
     @PutMapping("/")
-    protected Result baseEdit(@RequestBody @Validated(AddAndEditGroup.class) Step step) throws ErrorException {
+    protected Result baseEdit(@RequestBody @Validated(AddAndEditGroup.class) Step step) {
         return super.baseEdit(step);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) throws ErrorException {
+    protected Result baseDelById(@PathVariable String id) {
         return super.baseDelById(id);
     }
 
     @Override
     @DeleteMapping("/")
-    protected Result baseDelByIds(@RequestParam("ids") String ids) throws ErrorException {
+    protected Result baseDelByIds(@RequestParam("ids") String ids) {
         return super.baseDelByIds(ids);
     }
 }

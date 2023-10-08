@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-//@Validated(AddAndEditGroup.class)
 public abstract class BaseController<S extends IService<M>, M extends BaseEntity> {
 
     @Autowired
@@ -58,7 +57,7 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
     }
 
     @Operation(summary = "基础功能-新增", method = "POST")
-    protected Result baseAdd(@RequestBody @Valid M entity) throws ErrorException {
+    protected Result baseAdd(@RequestBody @Valid M entity) {
         boolean bool;
         try {
             bool = service.save(entity);
@@ -69,7 +68,7 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
     }
 
     @Operation(summary = "基础功能-修改", method = "PUT")
-    protected Result baseEdit(@RequestBody @Valid M entity) throws ErrorException {
+    protected Result baseEdit(@RequestBody @Valid M entity) {
         boolean bool;
         try {
             bool = service.updateById(entity);
@@ -80,7 +79,7 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
     }
 
     @Operation(summary = "基础功能-删除", method = "DELETE")
-    protected Result baseDelById(@PathVariable("id") String id) throws ErrorException {
+    protected Result baseDelById(@PathVariable("id") String id) {
         boolean bool;
         try {
             bool = service.removeById(id);
@@ -91,7 +90,7 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
     }
 
     @Operation(summary = "基础功能-根据主键id批量删除(多个id根据,分隔)", method = "DELETE")
-    protected Result baseDelByIds(@RequestParam("ids") String ids) throws ErrorException {
+    protected Result baseDelByIds(@RequestParam("ids") String ids) {
         String[] idsArr;
         try {
             idsArr = ids.split(StringPool.COMMA);

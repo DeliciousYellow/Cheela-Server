@@ -1,6 +1,5 @@
 package com.delicious.controller;
 
-import com.delicious.exception.ErrorException;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.entity.Roles;
 import com.delicious.service.RolesService;
@@ -37,25 +36,25 @@ public class RelationRolePermissionsController extends BaseController<RolesServi
 
     @Override
     @PostMapping("/")
-    protected Result baseAdd(@RequestBody Roles roles) throws ErrorException {
+    protected Result baseAdd(@RequestBody Roles roles) {
         return super.baseAdd(roles);
     }
 
     @Override
     @PutMapping("/")
-    protected Result baseEdit(@RequestBody Roles roles) throws ErrorException{
+    protected Result baseEdit(@RequestBody Roles roles) {
         return super.baseEdit(roles);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) throws ErrorException{
+    protected Result baseDelById(@PathVariable String id) {
         return super.baseDelById(id);
     }
 
     @Override
     @DeleteMapping("/")
-    protected Result baseDelByIds(@RequestParam("ids") String ids) throws ErrorException {
+    protected Result baseDelByIds(@RequestParam("ids") String ids) {
         return super.baseDelByIds(ids);
     }
 }

@@ -16,17 +16,23 @@ spring:
         add-to-simple-url-handler-mapping: true
 
       routes:
-        - id: login
+        - id: loginModule
           uri: http://localhost:8083
           predicates:
-            - Path=/login/**
+            - Path=/LoginModule/**
+          filters:
+            - StripPrefix=1
 
-        - id: user
-          uri: http://localhost:8081/user
+        - id: userMgmt
+          uri: http://localhost:8081
           predicates:
-            - Path=/user/**
+            - Path=/UserMgmt/**
+          filters:
+            - StripPrefix=1
 
-        - id: workflowInfo
-          uri: http://localhost:8084/workflowInfo
+        - id: workflowMgmt
+          uri: http://localhost:8084
           predicates:
-            - Path=/workflowInfo/**
+            - Path=/WorkflowMgmt/**
+          filters:
+            - StripPrefix=1

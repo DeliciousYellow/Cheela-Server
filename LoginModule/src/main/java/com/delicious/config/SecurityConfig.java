@@ -53,9 +53,10 @@ public class SecurityConfig implements WebSecurityConfigurer {
                         // 允许所有OPTIONS请求
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         // 允许直接访问授权登录接口
-                        .requestMatchers(HttpMethod.POST, "/login/login").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/loginAbout/login").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/loginAbout/register").permitAll()
                         // 允许 SpringMVC 的默认错误地址匿名访问
-                        .requestMatchers("/login/error").permitAll()
+                        .requestMatchers("/loginAbout/error").permitAll()
                         // 其他所有接口必须有Authority信息，Authority在登录成功后的UserDetailsImpl对象中默认设置“ROLE_USER”
                         //.requestMatchers("/**").hasAnyAuthority("ROLE_USER")
                         // 除上面外的所有请求全部需要鉴权认证

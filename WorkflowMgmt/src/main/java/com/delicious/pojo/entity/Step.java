@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Builder
 @TableName("t_steps")
-public class Step extends BaseEntity{
+public class Step extends BaseEntity {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -36,7 +36,7 @@ public class Step extends BaseEntity{
     /**
      * 工作流id
      */
-    private Integer workflowId;
+    private String workflowCode;
 
     /**
      * 步骤次序
@@ -51,7 +51,7 @@ public class Step extends BaseEntity{
     /**
      * 步骤是否完成
      */
-    private String stepState;
+    private Integer stepState;
 
     /**
      * 步骤完成时间

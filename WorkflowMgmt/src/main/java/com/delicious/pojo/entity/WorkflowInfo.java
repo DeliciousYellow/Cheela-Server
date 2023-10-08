@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Builder
 @TableName("workflow_info")
-public class WorkflowInfo extends BaseEntity{
+public class WorkflowInfo extends BaseEntity {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -32,6 +32,11 @@ public class WorkflowInfo extends BaseEntity{
      */
     @TableId(value = "workflow_id", type = IdType.AUTO)
     private Integer workflowId;
+
+    /**
+     * 流程编号
+     */
+    private String workflowCode;
 
     /**
      * 流程状态

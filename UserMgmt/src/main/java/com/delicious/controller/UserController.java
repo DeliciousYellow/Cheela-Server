@@ -1,7 +1,6 @@
 package com.delicious.controller;
 
 
-import com.delicious.exception.ErrorException;
 import com.delicious.pojo.AddAndEditGroup;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.entity.User;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/user")
 @RestController
-@Validated(AddAndEditGroup.class)
 public class UserController extends BaseController<UserService, User> {
     @Override
     @GetMapping("/{id}")
@@ -42,25 +40,25 @@ public class UserController extends BaseController<UserService, User> {
 
     @Override
     @PostMapping("/")
-    protected Result baseAdd(@RequestBody User user) throws ErrorException {
+    protected Result baseAdd(@RequestBody User user) {
         return super.baseAdd(user);
     }
 
     @Override
     @PutMapping("/")
-    protected Result baseEdit(@RequestBody @Validated(AddAndEditGroup.class) User user) throws ErrorException {
+    protected Result baseEdit(@RequestBody @Validated(AddAndEditGroup.class) User user) {
         return super.baseEdit(user);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) throws ErrorException {
+    protected Result baseDelById(@PathVariable String id) {
         return super.baseDelById(id);
     }
 
     @Override
     @DeleteMapping("/")
-    protected Result baseDelByIds(@RequestParam("ids") String ids) throws ErrorException {
+    protected Result baseDelByIds(@RequestParam("ids") String ids) {
         return super.baseDelByIds(ids);
     }
 }

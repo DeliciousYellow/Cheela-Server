@@ -62,12 +62,12 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         } catch (ExpiredJwtException e) {
             //JWT验证过期的情况
             request.setAttribute("TokenException", new TokenException(ResultEnum.TOKEN_TIMEOUT));
-            request.getRequestDispatcher("/login/error").forward(request, response);
+            request.getRequestDispatcher("/loginAbout/error").forward(request, response);
             return;
         } catch (SignatureException | MalformedJwtException e) {
             //JWT签名验证失败的情况|处理 JWT 格式错误的情况
             request.setAttribute("TokenException", new TokenException(ResultEnum.TOKEN_ERROR));
-            request.getRequestDispatcher("/login/error").forward(request, response);
+            request.getRequestDispatcher("/loginAbout/error").forward(request, response);
             return;
         }
         //获取userId
@@ -78,7 +78,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         if (!request_token_version.equals(redis_token_version)){
             //如果token中的版本不是最新版本，不予放行
             request.setAttribute("TokenException", new TokenException(ResultEnum.TOKEN_TIMEOUT));
-            request.getRequestDispatcher("/login/error").forward(request, response);
+            request.getRequestDispatcher("/loginAbout/error").forward(request, response);
             return;
         }
         User user = redisTemplate_String_User.opsForValue().get("login:" + userId);
