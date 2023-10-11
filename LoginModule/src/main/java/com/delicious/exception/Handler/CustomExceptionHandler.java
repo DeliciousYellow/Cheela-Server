@@ -67,7 +67,6 @@ public class CustomExceptionHandler {
     @ExceptionHandler(ErrorException.class)
     @ResponseBody
     public Result handleErrorException(ErrorException e) {
-        //TODO 统一异常处理应该更加细分
         String stackTrace = exceptionSout(e);
         log.error(stackTrace);
         return Result.build(ResultEnum.ERROR).setMessage(stackTrace);
