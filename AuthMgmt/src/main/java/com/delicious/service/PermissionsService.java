@@ -2,7 +2,7 @@ package com.delicious.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.delicious.pojo.entity.Permissions;
+import com.delicious.pojo.entity.Permission;
 
 /**
  * <p>
@@ -12,6 +12,6 @@ import com.delicious.pojo.entity.Permissions;
  * @author 黄灿
  * @since 2023-09-07
  */
-public interface PermissionsService extends IService<Permissions> {
+public interface PermissionsService extends IService<Permission> {
 
 }

@@ -1,9 +1,15 @@
 package com.delicious.controller;
 
 import com.delicious.pojo.Result;
-import com.delicious.pojo.entity.Roles;
+import com.delicious.pojo.ResultEnum;
+import com.delicious.pojo.entity.Permission;
+import com.delicious.pojo.entity.Role;
 import com.delicious.service.RolesService;
+import io.swagger.v3.oas.annotations.Operation;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,8 +20,19 @@ import org.springframework.web.bind.annotation.*;
  * @since 2023-09-07
  */
 @RestController
-@RequestMapping("/roles")
-public class RolesController extends BaseController<RolesService, Roles> {
+@RequestMapping("/role")
+public class RolesController extends BaseController<RolesService, Role> {
+
+    @Resource
+    private RolesService rolesService;
+
+    @Operation(summary = "根据用户id查询对应的所有权限", method = "GET")
+    @GetMapping("/QueryPermissionsByUserID/{id}")
+    protected Result QueryPermissionsByUserID(@PathVariable Integer id) {
+        List<Permission> permissions = rolesService.QueryPermissionsByUserID(id);
+        return Result.build(ResultEnum.SELECT_SUCCESS,permissions);
+    }
+
     @Override
     @GetMapping("/{id}")
     protected Result baseQueryById(@PathVariable Integer id) {
@@ -24,26 +41,26 @@ public class RolesController extends BaseController<RolesService, Roles> {
 
     @Override
     @GetMapping("/")
-    protected Result baseQueryByEntity(Roles roles) {
-        return super.baseQueryByEntity(roles);
+    protected Result baseQueryByEntity(Role role) {
+        return super.baseQueryByEntity(role);
     }
 
     @Override
     @GetMapping("/{pageIndex}/{pageSize}")
-    protected Result baseQueryPageByEntity(Roles roles, @PathVariable int pageIndex, @PathVariable int pageSize) {
-        return super.baseQueryPageByEntity(roles, pageIndex, pageSize);
+    protected Result baseQueryPageByEntity(Role role, @PathVariable int pageIndex, @PathVariable int pageSize) {
+        return super.baseQueryPageByEntity(role, pageIndex, pageSize);
     }
 
     @Override
     @PostMapping("/")
-    protected Result baseAdd(@RequestBody Roles roles) {
-        return super.baseAdd(roles);
+    protected Result baseAdd(@RequestBody Role role) {
+        return super.baseAdd(role);
     }
 
     @Override
     @PutMapping("/")
-    protected Result baseEdit(@RequestBody Roles roles) {
-        return super.baseEdit(roles);
+    protected Result baseEdit(@RequestBody Role role) {
+        return super.baseEdit(role);
     }
 
     @Override

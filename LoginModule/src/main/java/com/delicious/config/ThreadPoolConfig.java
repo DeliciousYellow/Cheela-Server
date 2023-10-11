@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 @Configuration
 public class ThreadPoolConfig {
 
-    // 创建一个固定大小的线程池，包含2个线程，并指定线程名称前缀
+    // 创建一个固定大小的线程池，包含3个线程，并指定线程名称前缀
     @Bean
     public ExecutorService createThreadPool() {
         return Executors.newFixedThreadPool(3);

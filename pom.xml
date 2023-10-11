@@ -17,6 +17,7 @@
 
     <modules>
         <module>UserMgmt</module>
+        <module>NoticeMgmt</module>
         <module>AuthMgmt</module>
         <module>LoginModule</module>
         <module>WorkflowMgmt</module>

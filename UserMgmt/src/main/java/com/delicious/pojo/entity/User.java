@@ -2,6 +2,7 @@ package com.delicious.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.delicious.pojo.AddAndEditGroup;
 import jakarta.validation.constraints.Email;
@@ -48,5 +49,6 @@ public class User extends BaseEntity {
     private String userEmail;
 
     @NotNull(message = "逻辑删除字段不能为空", groups = {AddAndEditGroup.class})
+    @TableLogic
     private Integer logicallyDelete;
 }

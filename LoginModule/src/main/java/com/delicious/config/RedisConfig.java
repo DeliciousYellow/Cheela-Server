@@ -1,6 +1,7 @@
 package com.delicious.config;
 
-import com.delicious.pojo.entity.User;
+import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
+import com.delicious.pojo.LoginUserDetails;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -12,11 +13,13 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfig {
 
     @Bean
-    public RedisTemplate<String, User> redisTemplateStringUser(RedisConnectionFactory redisConnectionFactory) {
-        RedisTemplate<String, User> redisTemplate = new RedisTemplate<>();
+    public RedisTemplate<String, LoginUserDetails> redisTemplateStringUser(RedisConnectionFactory redisConnectionFactory) {
+        RedisTemplate<String, LoginUserDetails> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+        //设置redis序列化方式
+        //这里采用alibaba的FastJson
+        redisTemplate.setValueSerializer(new FastJsonRedisSerializer<>(LoginUserDetails.class));
         return redisTemplate;
     }
 

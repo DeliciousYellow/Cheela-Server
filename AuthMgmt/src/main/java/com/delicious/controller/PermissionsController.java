@@ -1,7 +1,7 @@
 package com.delicious.controller;
 
 import com.delicious.pojo.Result;
-import com.delicious.pojo.entity.Permissions;
+import com.delicious.pojo.entity.Permission;
 import com.delicious.service.PermissionsService;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RequestMapping("/permission")
 @RestController
-public class PermissionsController extends BaseController<PermissionsService, Permissions> {
+public class PermissionsController extends BaseController<PermissionsService, Permission> {
 
     private final PermissionsService permissionsService = service;//从父类继承过来的service
 
@@ -27,26 +27,26 @@ public class PermissionsController extends BaseController<PermissionsService, Pe
 
     @Override
     @GetMapping("/")
-    protected Result baseQueryByEntity(Permissions permissions) {
-        return super.baseQueryByEntity(permissions);
+    protected Result baseQueryByEntity(Permission permission) {
+        return super.baseQueryByEntity(permission);
     }
 
     @Override
     @GetMapping("/{pageIndex}/{pageSize}")
-    protected Result baseQueryPageByEntity(Permissions entity, @PathVariable int pageIndex, @PathVariable int pageSize) {
+    protected Result baseQueryPageByEntity(Permission entity, @PathVariable int pageIndex, @PathVariable int pageSize) {
         return super.baseQueryPageByEntity(entity, pageIndex, pageSize);
     }
 
     @Override
     @PostMapping("/")
-    protected Result baseAdd(@RequestBody Permissions permissions) {
-        return super.baseAdd(permissions);
+    protected Result baseAdd(@RequestBody Permission permission) {
+        return super.baseAdd(permission);
     }
 
     @Override
     @PutMapping("/")
-    protected Result baseEdit(@RequestBody Permissions permissions) {
-        return super.baseEdit(permissions);
+    protected Result baseEdit(@RequestBody Permission permission) {
+        return super.baseEdit(permission);
     }
 
     @Override

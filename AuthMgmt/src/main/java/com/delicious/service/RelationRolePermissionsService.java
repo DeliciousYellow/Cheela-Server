@@ -1,7 +1,7 @@
 package com.delicious.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.delicious.pojo.entity.RelationRolePermissions;
+import com.delicious.pojo.entity.RelationRolePermission;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.delicious.pojo.entity.RelationRolePermissions;
  * @author 黄灿
  * @since 2023-09-07
  */
-public interface RelationRolePermissionsService extends IService<RelationRolePermissions> {
+public interface RelationRolePermissionsService extends IService<RelationRolePermission> {
 
 }

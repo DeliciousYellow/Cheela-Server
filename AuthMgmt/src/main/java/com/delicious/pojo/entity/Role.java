@@ -2,13 +2,9 @@ package com.delicious.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+import lombok.*;
 
 import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * <p>
@@ -20,8 +16,10 @@ import java.io.Serializable;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class Roles extends BaseEntity{
+public class Role extends BaseEntity{
 
     @Serial
     private static final long serialVersionUID = 1L;

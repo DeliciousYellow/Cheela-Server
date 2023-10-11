@@ -3,10 +3,13 @@ package com.delicious.filter;
 
 import com.delicious.exception.CallServiceException;
 import com.delicious.exception.TokenException;
+import com.delicious.pojo.LoginUserDetails;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.ResultEnum;
+import com.delicious.pojo.entity.Permission;
 import com.delicious.pojo.entity.User;
-import com.delicious.service.UserService;
+import com.delicious.service.FeignRoleService;
+import com.delicious.service.FeignUserService;
 import com.delicious.util.JwtUtils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -17,6 +20,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -25,18 +29,24 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 
+import static com.delicious.pojo.ShareTokenVersion.VersionMap;
+
 @Component
+@Slf4j
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Resource
-    private RedisTemplate<String, User> redisTemplate_String_User;
+    private RedisTemplate<String, LoginUserDetails> redisTemplate_String_LoginUserDetails;
     @Resource
     private RedisTemplate<String, Integer> redisTemplate_String_Integer;
     @Resource
-    private UserService userService;
+    private FeignUserService feignUserService;
+    @Resource
+    private FeignRoleService roleService;
     @Resource
     private ExecutorService executorService;
 
@@ -72,35 +82,65 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         }
         //获取userId
         int userId = Integer.parseInt(claimsByToken.getSubject());
-        //获取redis中存储的最新版本号
-        Integer redis_token_version = redisTemplate_String_Integer.opsForValue().get("token-version-id:"+userId);
+        //查静态变量的版本信息，如果查询redis失败，直接使用静态变量版本信息
+        Integer token_version = VersionMap.get("token-version-id:" + userId);
+        try {
+            Integer redis_token_version = redisTemplate_String_Integer.opsForValue().get("token-version-id:" + userId);
+            if (!Objects.isNull(redis_token_version)){
+                //如果redis某段时间崩了，静态变量的版本信息可能会大于redis中的
+                //恢复连接之后，把静态变量的版本信息重新提交到redis里。
+                token_version = token_version > redis_token_version ? token_version : redis_token_version;
+                Integer finalToken_version = token_version;
+                executorService.submit(()->redisTemplate_String_Integer.opsForValue().set("token-version-id:"+userId, finalToken_version));
+            }
+        } catch (Exception e) {
+            log.info("redis操作失败，错误信息："+e.getMessage());
+        }
         Integer request_token_version = claimsByToken.get("version", Integer.class);
-        if (!request_token_version.equals(redis_token_version)){
+        if (!request_token_version.equals(token_version)) {
             //如果token中的版本不是最新版本，不予放行
             request.setAttribute("TokenException", new TokenException(ResultEnum.TOKEN_TIMEOUT));
             request.getRequestDispatcher("/loginAbout/error").forward(request, response);
             return;
         }
-        User user = redisTemplate_String_User.opsForValue().get("login:" + userId);
-        if (Objects.isNull(user)) {
+        LoginUserDetails loginUserDetails = null;
+        try {
+            loginUserDetails = redisTemplate_String_LoginUserDetails.opsForValue().get("login:" + userId);
+        } catch (Exception e) {
+            log.info("redis操作失败，错误信息："+e.getMessage());
+        }
+        if (Objects.isNull(loginUserDetails)) {
             //如果在token验证通过的情况下，在redis里却没有对应的数据，说明该数据在redis里过期了
             //此时要么重新登陆以存入redis，要么在这里查数据库重新交给redis
-            Result result = userService.baseQueryById(userId);
-            User DB_user;
+            //为了避免redis崩了所有鉴权都无法通过的情况，这里选择查数据库
+            Result result = feignUserService.baseQueryById(userId);
+            LoginUserDetails DB_loginUserDetails;
             if (Objects.equals(result.getCode(), ResultEnum.SELECT_SUCCESS.getCode())) {
                 //返回结果响应码为210,请求成功
-                DB_user = (User) result.getData();
-                //把数据库的DB_user存入Redis
-                executorService.submit(() -> redisTemplate_String_User.opsForValue().set("login:" + DB_user.getUserId(), DB_user));
+                User DB_user = (User) result.getData();
+                //查询用户拥有的权限信息到封装到 LoginUserDetails
+                Result<List<Permission>> permissionResult = roleService.QueryPermissionsByUserID(DB_user.getUserId());
+                List<Permission> permissions;
+                if (Objects.equals(permissionResult.getCode(), ResultEnum.SELECT_SUCCESS.getCode())) {
+                    permissions = permissionResult.getData();
+                } else {
+                    throw new CallServiceException();
+                }
+                DB_loginUserDetails = LoginUserDetails.builder().user(DB_user).permissions(permissions).build();
+                //把数据库查出来的用户信息和权限信息一起封装成LoginUserDetails再存入Redis
+                executorService.submit(() -> redisTemplate_String_LoginUserDetails.opsForValue().set("login:" + DB_user.getUserId(), DB_loginUserDetails));
             } else {
                 throw new CallServiceException();
             }
-            user = DB_user;
+            loginUserDetails = DB_loginUserDetails;
         }
-        //存入SecurityContextHolder
-        //TODO 封装权限信息到  authenticationToken
+        //在请求进入servlet容器时，查询该请求token中的用户所拥有的权限信息，存入SecurityContextHolder
         UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(user, null, null);
+                new UsernamePasswordAuthenticationToken(
+                        loginUserDetails.getUser(),
+                        null,
+                        loginUserDetails.getAuthorities()
+                );
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         filterChain.doFilter(request, response);
     }

@@ -64,12 +64,6 @@ public class CustomExceptionHandler {
     }
 
 
-
-
-
-
-
-
     @ExceptionHandler(ErrorException.class)
     @ResponseBody
     public Result handleErrorException(ErrorException e) {

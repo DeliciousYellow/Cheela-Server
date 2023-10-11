@@ -1,10 +1,7 @@
 package com.delicious.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+import lombok.*;
 
 /**
  * <p>
@@ -15,10 +12,12 @@ import lombok.experimental.Accessors;
  * @since 2023-09-07
  */
 @Data
-@EqualsAndHashCode(callSuper = false)//这个注解用于在生成 equals 和 hashCode 方法时，指示 Lombok 不要考虑父类的字段。
+@EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @TableName("relation_role_permissions")
-public class RelationRolePermissions {
+public class RelationRolePermission {
 
     private static final long serialVersionUID = 1L;
     private Integer roleId;

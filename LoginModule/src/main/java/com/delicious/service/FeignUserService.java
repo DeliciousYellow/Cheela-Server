@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @FeignClient(value = "UserMgmt",path = "/user")
-public interface UserService {
+public interface FeignUserService {
 
     @GetMapping("/{id}")
     Result<User> baseQueryById(@PathVariable Integer id);

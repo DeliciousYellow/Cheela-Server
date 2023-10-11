@@ -70,11 +70,11 @@ public class SecurityConfig implements WebSecurityConfigurer {
     }
 
     @Override
-    public void init(SecurityBuilder builder) throws Exception {
+    public void init(SecurityBuilder builder) {
 
     }
     @Override
-    public void configure(SecurityBuilder builder) throws Exception {
+    public void configure(SecurityBuilder builder) {
 
     }
 }
