@@ -24,6 +24,8 @@ public enum ResultEnum {
     TOKEN_TIMEOUT(380,"Token过期,请重新登陆"),
     TOKEN_ERROR(381,"Token错误,请重新登陆"),
 
+    PERMISSION_DENIED(385,"权限不足"),
+
     CALL_ERROR(590,"服务繁忙请重试"),
 
     ERROR(599,"发生错误");

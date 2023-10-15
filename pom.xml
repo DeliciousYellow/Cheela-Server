@@ -21,6 +21,7 @@
         <module>AuthMgmt</module>
         <module>LoginModule</module>
         <module>WorkflowMgmt</module>
+        <module>EmployeeMgmt</module>
 
         <module>GateWay</module>
     </modules>

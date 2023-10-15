@@ -1,9 +1,6 @@
-package com.delicious.exception.Handler;
+package com.delicious.handler;
 
-import com.delicious.exception.CallServiceException;
-import com.delicious.exception.ErrorException;
-import com.delicious.exception.LoginFailureException;
-import com.delicious.exception.TokenException;
+import com.delicious.exception.*;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.ResultEnum;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +15,18 @@ import java.io.StringWriter;
 
 @Slf4j
 @ControllerAdvice
-public class CustomExceptionHandler {
+public class GlobalExceptionHandler {
+
+    /**
+     * 处理权限不足 PermissionDeniedException 异常
+     * @return Result
+     */
+    @ExceptionHandler(PermissionDeniedException.class)
+    @ResponseBody
+    public Result handleMethodArgumentNotValidException(PermissionDeniedException e) {
+        return Result.build(ResultEnum.PERMISSION_DENIED).setMessage(e.getMessage());
+    }
+
     /**
      * 处理@Validated注解判断参数不符合定义时抛出的异常
      * @return Result

@@ -15,7 +15,7 @@ import java.util.List;
  * @since 2023-09-07
  */
 public interface RolesMapper extends BaseMapper<Role> {
-
     List<Permission> QueryPermissionsByUserID(Integer id);
 
+    List<Role> QueryRolesByUserID(Integer id);
 }

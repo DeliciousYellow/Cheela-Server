@@ -28,4 +28,9 @@ public class RolesServiceImpl extends ServiceImpl<RolesMapper, Role> implements 
     public List<Permission> QueryPermissionsByUserID(Integer id) {
         return rolesMapper.QueryPermissionsByUserID(id);
     }
+
+    @Override
+    public List<Role> QueryRolesByUserID(Integer id) {
+        return rolesMapper.QueryRolesByUserID(id);
+    }
 }

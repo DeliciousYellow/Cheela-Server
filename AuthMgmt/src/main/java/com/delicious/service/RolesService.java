@@ -17,4 +17,6 @@ import java.util.List;
  */
 public interface RolesService extends IService<Role> {
     List<Permission> QueryPermissionsByUserID(Integer id);
+
+    List<Role> QueryRolesByUserID(Integer id);
 }

@@ -10,6 +10,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import java.io.Serial;
 
@@ -21,6 +22,7 @@ import java.io.Serial;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 @Builder
 @TableName("t_user")
 public class User extends BaseEntity {

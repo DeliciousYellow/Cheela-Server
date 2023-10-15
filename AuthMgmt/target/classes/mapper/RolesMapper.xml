@@ -4,7 +4,9 @@
 
     <select id="QueryPermissionsByUserID" resultType="com.delicious.pojo.entity.Permission">
         SELECT
-            *
+            permission_id,
+            permission_name,
+            permission_description
         FROM
             permission
         WHERE
@@ -15,6 +17,22 @@
                     relation_role_permission
                 WHERE
                     role_id IN ( SELECT role_id FROM relation_user_role WHERE user_id = #{id} ))
+    </select>
+    <select id="QueryRolesByUserID" resultType="com.delicious.pojo.entity.Role">
+        SELECT
+            role_id,
+            role_name,
+            role_description
+        FROM
+            role
+        WHERE
+                role_id IN (
+                SELECT
+                    role_id
+                FROM
+                    relation_user_role
+                WHERE
+                    user_id = #{id} )
     </select>
 
 </mapper>

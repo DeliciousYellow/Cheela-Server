@@ -33,6 +33,13 @@ public class RolesController extends BaseController<RolesService, Role> {
         return Result.build(ResultEnum.SELECT_SUCCESS,permissions);
     }
 
+    @Operation(summary = "根据用户id查询对应的角色", method = "GET")
+    @GetMapping("/QueryRolesByUserID/{id}")
+    protected Result QueryRolesByUserID(@PathVariable Integer id) {
+        List<Role> roles = rolesService.QueryRolesByUserID(id);
+        return Result.build(ResultEnum.SELECT_SUCCESS,roles);
+    }
+
     @Override
     @GetMapping("/{id}")
     protected Result baseQueryById(@PathVariable Integer id) {

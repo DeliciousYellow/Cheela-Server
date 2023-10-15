@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="GateWay" />
         <module name="UserMgmt" />
         <module name="LoginModule" />
         <module name="WorkflowMgmt" />
         <module name="AuthMgmt" />
-        <module name="GateWay" />
+        <module name="EmployeeMgmt" />
         <module name="NoticeMgmt" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="AuthMgmt" options="-parameters" />
       <module name="BlockChain" options="-parameters" />
       <module name="Cheela" options="" />
+      <module name="EmployeeMgmt" options="-parameters" />
       <module name="GateWay" options="-parameters" />
       <module name="LoginModule" options="-parameters" />
       <module name="NoticeMgmt" options="-parameters" />
