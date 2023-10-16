@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2023-10-15
  */
 @RestController
-@RequestMapping("/employee_sign_record")
+@RequestMapping("/employeeSignRecord")
 public class EmployeeSignRecordController extends BaseController<EmployeeSignRecordService, EmployeeSignRecord>{
     @Override
     @GetMapping("/{id}")

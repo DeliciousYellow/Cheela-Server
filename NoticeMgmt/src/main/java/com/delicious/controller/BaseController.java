@@ -79,7 +79,7 @@ public abstract class BaseController<S extends IService<M>, M extends BaseEntity
     }
 
     @Operation(summary = "基础功能-删除", method = "DELETE")
-    protected Result baseDelById(@PathVariable("id") String id) {
+    protected Result baseDelById(@PathVariable("id") Integer id) {
         boolean bool;
         try {
             bool = service.removeById(id);

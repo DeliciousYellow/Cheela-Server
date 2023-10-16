@@ -46,3 +46,11 @@ spring:
             - Path=/NoticeMgmt/**
           filters:
             - StripPrefix=1
+
+
+        - id: EmployeeMgmt
+          uri: http://localhost:8086
+          predicates:
+            - Path=/EmployeeMgmt/**
+          filters:
+            - StripPrefix=1

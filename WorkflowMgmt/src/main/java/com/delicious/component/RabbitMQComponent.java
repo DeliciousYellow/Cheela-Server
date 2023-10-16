@@ -1,8 +1,8 @@
 package com.delicious.component;
 
-import com.rabbitmq.client.Channel;
 import com.alibaba.fastjson.JSON;
 import com.delicious.pojo.entity.NoticeInfo;
+import com.rabbitmq.client.Channel;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
@@ -20,7 +20,7 @@ public class RabbitMQComponent {
     @Resource
     private RabbitTemplate rabbitTemplate;
 
-    public void sendMsg(NoticeInfo noticeInfo,String type) {
+    public void sendMsg(NoticeInfo noticeInfo, String type) {
         HashMap<String, Object> map = new HashMap<>();
         map.put("noticeInfo",noticeInfo);
         map.put("message_type",type);

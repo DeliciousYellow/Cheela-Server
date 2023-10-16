@@ -13,3 +13,4 @@ spring:
     import:
       - optional:nacos:BaseConfig.${spring.cloud.nacos.config.file-extension}
       - optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+      - optional:nacos:RedisConfig.${spring.cloud.nacos.config.file-extension}

@@ -79,11 +79,13 @@ public class EmployeeInfo extends BaseEntity {
      * 对应用户id
      */
     private Integer employeeUserId;
-
     /**
      * 部门id
      */
     private Integer employeeDeptId;
-
+    /**
+     * 对应部门名
+     */
+    private String employeeDeptName;
 
 }

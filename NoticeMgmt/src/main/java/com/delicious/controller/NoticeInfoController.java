@@ -54,19 +54,22 @@ public class NoticeInfoController extends BaseController<NoticeInfoService, Noti
     @Override
     @PostMapping("/")
     protected Result baseAdd(@RequestBody @Validated(AddAndEditGroup.class) NoticeInfo noticeInfo) {
-        rabbitMQComponent.sendMsg(noticeInfo);
-        return super.baseAdd(noticeInfo);
+        Result result = super.baseAdd(noticeInfo);
+        rabbitMQComponent.sendMsg(noticeInfo,"INSERT");
+        return result;
     }
 
     @Override
     @PutMapping("/")
     protected Result baseEdit(@RequestBody @Validated(AddAndEditGroup.class) NoticeInfo noticeInfo) {
+        rabbitMQComponent.sendMsg(noticeInfo,"UPDATE");
         return super.baseEdit(noticeInfo);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) {
+    protected Result baseDelById(@PathVariable Integer id) {
+        rabbitMQComponent.sendMsg(NoticeInfo.builder().noticeId(id).build(), "DELETE");
         return super.baseDelById(id);
     }
 

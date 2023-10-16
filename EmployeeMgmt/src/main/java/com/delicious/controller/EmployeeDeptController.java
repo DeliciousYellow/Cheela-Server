@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2023-10-15
  */
 @RestController
-@RequestMapping("/employee_dept")
+@RequestMapping("/employeeDept")
 public class EmployeeDeptController extends BaseController<EmployeeDeptService,EmployeeDept> {
     @Override
     @GetMapping("/{id}")
