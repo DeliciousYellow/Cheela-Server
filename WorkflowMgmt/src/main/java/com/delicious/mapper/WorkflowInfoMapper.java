@@ -1,7 +1,7 @@
 package com.delicious.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.delicious.pojo.entity.WorkflowInfo;
+import com.delicious.pojo.entity.workflow.WorkflowInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

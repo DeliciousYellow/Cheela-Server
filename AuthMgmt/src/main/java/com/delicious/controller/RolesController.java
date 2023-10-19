@@ -1,9 +1,9 @@
 package com.delicious.controller;
 
+import com.delicious.pojo.entity.auth.Permission;
+import com.delicious.pojo.entity.auth.Role;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.ResultEnum;
-import com.delicious.pojo.entity.Permission;
-import com.delicious.pojo.entity.Role;
 import com.delicious.service.RolesService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
@@ -25,6 +25,13 @@ public class RolesController extends BaseController<RolesService, Role> {
 
     @Resource
     private RolesService rolesService;
+
+    @Operation(summary = "根据角色id查询对应的所有权限", method = "GET")
+    @GetMapping("/QueryPermissionsByRoleId/{id}")
+    protected Result QueryPermissionsByRoleId(@PathVariable Integer id) {
+        List<Permission> permissions = rolesService.QueryPermissionsByRoleID(id);
+        return Result.build(ResultEnum.SELECT_SUCCESS,permissions);
+    }
 
     @Operation(summary = "根据用户id查询对应的所有权限", method = "GET")
     @GetMapping("/QueryPermissionsByUserID/{id}")
@@ -72,7 +79,7 @@ public class RolesController extends BaseController<RolesService, Role> {
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) {
+    protected Result baseDelById(@PathVariable Integer id) {
         return super.baseDelById(id);
     }
 

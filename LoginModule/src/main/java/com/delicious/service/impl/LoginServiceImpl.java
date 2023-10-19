@@ -1,11 +1,11 @@
 package com.delicious.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.delicious.exception.LoginFailureException;
 import com.delicious.pojo.LoginUserDetails;
+import com.delicious.pojo.entity.user.User;
+import com.delicious.exception.LoginFailureException;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.ResultEnum;
-import com.delicious.pojo.entity.User;
 import com.delicious.service.LoginService;
 import com.delicious.util.JwtUtils;
 import jakarta.annotation.Resource;

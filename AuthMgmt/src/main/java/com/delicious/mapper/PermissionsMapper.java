@@ -1,7 +1,7 @@
 package com.delicious.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.delicious.pojo.entity.Permission;
+import com.delicious.pojo.entity.auth.Permission;
 
 /**
  * <p>

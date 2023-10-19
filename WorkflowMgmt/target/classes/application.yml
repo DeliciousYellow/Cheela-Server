@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: WorkflowMgmt
@@ -11,5 +12,7 @@ spring:
         password: nacos
   config:
     import:
-      - optional:nacos:BaseConfig.${spring.cloud.nacos.config.file-extension}
+      - optional:nacos:BaseConfig.yml
+      - optional:nacos:RedisConfig.yml
+      - optional:nacos:RabbitMQConfig.yml
       - optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}

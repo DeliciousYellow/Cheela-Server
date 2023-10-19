@@ -2,7 +2,7 @@ package com.delicious.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.delicious.mapper.RelationUserRolesMapper;
-import com.delicious.pojo.entity.RelationUserRole;
+import com.delicious.pojo.entity.auth.RelationUserRole;
 import com.delicious.service.RelationUserRolesService;
 import org.springframework.stereotype.Service;
 

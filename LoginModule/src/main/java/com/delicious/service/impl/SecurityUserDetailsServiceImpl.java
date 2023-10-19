@@ -2,14 +2,15 @@ package com.delicious.service.impl;
 
 import com.delicious.exception.CallServiceException;
 import com.delicious.exception.LoginFailureException;
+import com.delicious.feignService.FeignRoleService;
+import com.delicious.feignService.FeignUserService;
 import com.delicious.pojo.LoginUserDetails;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.ResultEnum;
-import com.delicious.pojo.entity.Permission;
-import com.delicious.pojo.entity.User;
-import com.delicious.service.FeignRoleService;
-import com.delicious.service.FeignUserService;
+import com.delicious.pojo.entity.auth.Permission;
+import com.delicious.pojo.entity.user.User;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,6 +27,9 @@ public class SecurityUserDetailsServiceImpl implements UserDetailsService {
     @Resource
     private FeignRoleService roleService;
 
+    @Resource
+    private HttpServletRequest request;
+
     @Override
     public UserDetails loadUserByUsername(String userPhone) throws UsernameNotFoundException {
         //查用户信息
@@ -40,7 +44,7 @@ public class SecurityUserDetailsServiceImpl implements UserDetailsService {
             }
             //把数据封装成UserDetails返回
             User user = result.getData().get(0);
-            Result<List<Permission>> permissionResult = roleService.QueryPermissionsByUserID(user.getUserId());
+            Result<List<Permission>> permissionResult = roleService.QueryPermissionsByUserID(user.getUserId(),request.getHeader("X-Token"));
             if (Objects.equals(permissionResult.getCode(), ResultEnum.SELECT_SUCCESS.getCode())) {
                 List<Permission> permissions = permissionResult.getData();
                 return LoginUserDetails.builder().user(user).permissions(permissions).build();

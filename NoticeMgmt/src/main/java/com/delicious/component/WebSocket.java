@@ -39,6 +39,7 @@ public class WebSocket {
     }
 
     public void sendMessage(String message) {
+        log.info("此次广播时已连接的客户端数量{}",sessionMap.size());
         sessionMap.forEach((name_key, session) -> {
             try {
                 session.getBasicRemote().sendText(message);

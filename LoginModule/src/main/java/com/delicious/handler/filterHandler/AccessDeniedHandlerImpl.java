@@ -13,6 +13,14 @@ import java.io.IOException;
 
 @Component
 public class AccessDeniedHandlerImpl implements AccessDeniedHandler {
+    /**
+     * 权限不足时抛出的异常
+     * @param request
+     * @param response
+     * @param accessDeniedException
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
         request.setAttribute("PermissionDeniedException", new PermissionDeniedException(ResultEnum.TOKEN_ERROR));

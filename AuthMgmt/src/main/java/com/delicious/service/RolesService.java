@@ -2,8 +2,8 @@ package com.delicious.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.delicious.pojo.entity.Permission;
-import com.delicious.pojo.entity.Role;
+import com.delicious.pojo.entity.auth.Permission;
+import com.delicious.pojo.entity.auth.Role;
 
 import java.util.List;
 
@@ -17,6 +17,8 @@ import java.util.List;
  */
 public interface RolesService extends IService<Role> {
     List<Permission> QueryPermissionsByUserID(Integer id);
+
+    List<Permission> QueryPermissionsByRoleID(Integer id);
 
     List<Role> QueryRolesByUserID(Integer id);
 }

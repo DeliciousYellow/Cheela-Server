@@ -1,7 +1,7 @@
 package com.delicious.controller;
 
+import com.delicious.pojo.entity.auth.Permission;
 import com.delicious.pojo.Result;
-import com.delicious.pojo.entity.Permission;
 import com.delicious.service.PermissionsService;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,7 +51,7 @@ public class PermissionsController extends BaseController<PermissionsService, Pe
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) {
+    protected Result baseDelById(@PathVariable Integer id) {
         return super.baseDelById(id);
     }
 

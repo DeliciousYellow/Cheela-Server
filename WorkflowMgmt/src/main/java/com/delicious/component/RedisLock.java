@@ -1,7 +1,7 @@
 package com.delicious.component;
 
 import jakarta.annotation.Resource;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class RedisLock {
     @Resource
-    private StringRedisTemplate redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
     public boolean acquireLock(String lockKey, long expireTimeInSeconds) {
         Boolean locked = redisTemplate.opsForValue().setIfAbsent(lockKey, "locked");

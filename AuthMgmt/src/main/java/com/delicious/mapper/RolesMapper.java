@@ -1,8 +1,8 @@
 package com.delicious.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.delicious.pojo.entity.Permission;
-import com.delicious.pojo.entity.Role;
+import com.delicious.pojo.entity.auth.Permission;
+import com.delicious.pojo.entity.auth.Role;
 
 import java.util.List;
 
@@ -16,6 +16,8 @@ import java.util.List;
  */
 public interface RolesMapper extends BaseMapper<Role> {
     List<Permission> QueryPermissionsByUserID(Integer id);
+
+    List<Permission> QueryPermissionsByRoleID(Integer id);
 
     List<Role> QueryRolesByUserID(Integer id);
 }

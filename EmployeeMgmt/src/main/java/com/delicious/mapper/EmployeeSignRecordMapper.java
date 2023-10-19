@@ -2,7 +2,7 @@ package com.delicious.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.delicious.pojo.entity.EmployeeSignRecord;
+import com.delicious.pojo.entity.employee.EmployeeSignRecord;
 
 /**
  * <p>

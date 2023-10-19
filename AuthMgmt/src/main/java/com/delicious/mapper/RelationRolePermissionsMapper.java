@@ -1,7 +1,7 @@
 package com.delicious.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.delicious.pojo.entity.RelationRolePermission;
+import com.delicious.pojo.entity.auth.RelationRolePermission;
 
 /**
  * <p>
@@ -13,4 +13,5 @@ import com.delicious.pojo.entity.RelationRolePermission;
  */
 public interface RelationRolePermissionsMapper extends BaseMapper<RelationRolePermission> {
 
+    int DelByEntity(RelationRolePermission relationRolePermission);
 }

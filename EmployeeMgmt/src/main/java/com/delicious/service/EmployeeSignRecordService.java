@@ -1,7 +1,7 @@
 package com.delicious.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.delicious.pojo.entity.EmployeeSignRecord;
+import com.delicious.pojo.entity.employee.EmployeeSignRecord;
 
 /**
  * <p>

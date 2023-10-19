@@ -1,7 +1,7 @@
 package com.delicious.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.delicious.pojo.entity.User;
+import com.delicious.pojo.entity.user.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

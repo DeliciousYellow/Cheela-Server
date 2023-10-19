@@ -23,6 +23,12 @@ spring:
           filters:
             - StripPrefix=1
 
+        - id: AuthMgmt
+          uri: http://localhost:8082
+          predicates:
+            - Path=/AuthMgmt/**
+          filters:
+            - StripPrefix=1
 
         - id: LoginModule
           uri: http://localhost:8083

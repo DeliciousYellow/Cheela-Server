@@ -1,7 +1,7 @@
 package com.delicious.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.delicious.pojo.entity.Permission;
+import com.delicious.pojo.entity.auth.Permission;
 import com.delicious.mapper.PermissionsMapper;
 import com.delicious.service.PermissionsService;
 import org.springframework.stereotype.Service;

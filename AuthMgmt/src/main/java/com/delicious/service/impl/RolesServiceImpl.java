@@ -2,8 +2,8 @@ package com.delicious.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.delicious.mapper.RolesMapper;
-import com.delicious.pojo.entity.Permission;
-import com.delicious.pojo.entity.Role;
+import com.delicious.pojo.entity.auth.Permission;
+import com.delicious.pojo.entity.auth.Role;
 import com.delicious.service.RolesService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -27,6 +27,11 @@ public class RolesServiceImpl extends ServiceImpl<RolesMapper, Role> implements 
     @Override
     public List<Permission> QueryPermissionsByUserID(Integer id) {
         return rolesMapper.QueryPermissionsByUserID(id);
+    }
+
+    @Override
+    public List<Permission> QueryPermissionsByRoleID(Integer id) {
+        return rolesMapper.QueryPermissionsByRoleID(id);
     }
 
     @Override

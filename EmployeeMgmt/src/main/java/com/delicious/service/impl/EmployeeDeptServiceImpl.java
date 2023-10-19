@@ -2,7 +2,7 @@ package com.delicious.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.delicious.mapper.EmployeeDeptMapper;
-import com.delicious.pojo.entity.EmployeeDept;
+import com.delicious.pojo.entity.employee.EmployeeDept;
 import com.delicious.service.EmployeeDeptService;
 import org.springframework.stereotype.Service;
 

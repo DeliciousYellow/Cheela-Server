@@ -3,12 +3,12 @@ package com.delicious.controller;
 import com.delicious.exception.CallServiceException;
 import com.delicious.exception.ErrorException;
 import com.delicious.exception.TokenException;
+import com.delicious.feignService.FeignRoleService;
+import com.delicious.feignService.FeignUserService;
 import com.delicious.pojo.Result;
 import com.delicious.pojo.ResultEnum;
-import com.delicious.pojo.entity.Role;
-import com.delicious.pojo.entity.User;
-import com.delicious.service.FeignRoleService;
-import com.delicious.service.FeignUserService;
+import com.delicious.pojo.entity.auth.Role;
+import com.delicious.pojo.entity.user.User;
 import com.delicious.service.LoginService;
 import com.delicious.util.JwtUtils;
 import io.swagger.v3.oas.annotations.Operation;
@@ -36,7 +36,7 @@ public class LoginController {
     private HttpServletRequest request;
 
     @GetMapping("/hello")
-    @PreAuthorize("hasAuthority('update:notice')")
+    @PreAuthorize("hasAuthority('select:any')")
     public Result Hello() {
         return Result.build(ResultEnum.SELECT_SUCCESS).setMessage("HelloWorld");
     }
@@ -51,7 +51,7 @@ public class LoginController {
         Result<List<Role>> roleResult;
         try {
             userResult = feignUserService.baseQueryById(userId);
-            roleResult = feignRoleService.QueryRolesByUserID(userId);
+            roleResult = feignRoleService.QueryRolesByUserID(userId,request.getHeader("X-Token"));
         } catch (Exception e) {
             throw new CallServiceException();
         }

@@ -1,8 +1,8 @@
 package com.delicious.controller;
 
+import com.delicious.pojo.entity.employee.EmployeeDept;
 import com.delicious.pojo.AddAndEditGroup;
 import com.delicious.pojo.Result;
-import com.delicious.pojo.entity.EmployeeDept;
 import com.delicious.service.EmployeeDeptService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -50,7 +50,7 @@ public class EmployeeDeptController extends BaseController<EmployeeDeptService,E
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) {
+    protected Result baseDelById(@PathVariable Integer id) {
         return super.baseDelById(id);
     }
 

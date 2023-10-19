@@ -1,7 +1,7 @@
 package com.delicious.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.delicious.pojo.entity.NoticeInfo;
+import com.delicious.pojo.entity.notice.NoticeInfo;
 
 /**
  * <p>

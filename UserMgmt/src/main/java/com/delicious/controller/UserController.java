@@ -3,7 +3,7 @@ package com.delicious.controller;
 
 import com.delicious.pojo.AddAndEditGroup;
 import com.delicious.pojo.Result;
-import com.delicious.pojo.entity.User;
+import com.delicious.pojo.entity.user.User;
 import com.delicious.service.UserService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -52,7 +52,7 @@ public class UserController extends BaseController<UserService, User> {
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) {
+    protected Result baseDelById(@PathVariable Integer id) {
         return super.baseDelById(id);
     }
 

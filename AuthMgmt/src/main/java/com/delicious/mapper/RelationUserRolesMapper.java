@@ -2,7 +2,7 @@ package com.delicious.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.delicious.pojo.entity.RelationUserRole;
+import com.delicious.pojo.entity.auth.RelationUserRole;
 
 /**
  * <p>

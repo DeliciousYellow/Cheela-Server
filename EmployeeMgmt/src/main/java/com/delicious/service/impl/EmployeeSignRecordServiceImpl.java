@@ -2,7 +2,7 @@ package com.delicious.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.delicious.mapper.EmployeeSignRecordMapper;
-import com.delicious.pojo.entity.EmployeeSignRecord;
+import com.delicious.pojo.entity.employee.EmployeeSignRecord;
 import com.delicious.service.EmployeeSignRecordService;
 import org.springframework.stereotype.Service;
 

@@ -24,6 +24,7 @@
         <module>EmployeeMgmt</module>
 
         <module>GateWay</module>
+        <module>SharedModule</module>
     </modules>
 
     <properties>

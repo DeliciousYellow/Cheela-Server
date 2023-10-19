@@ -1,14 +1,15 @@
 package com.delicious.controller;
 
-
-import com.delicious.component.RabbitMQComponent;
+import com.delicious.component.RabbitMQ_Notice;
+import com.delicious.pojo.entity.notice.NoticeInfo;
 import com.delicious.pojo.AddAndEditGroup;
 import com.delicious.pojo.Result;
-import com.delicious.pojo.entity.NoticeInfo;
 import com.delicious.service.NoticeInfoService;
 import jakarta.annotation.Resource;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.ExecutorService;
 
 /**
  * <p>
@@ -23,7 +24,9 @@ import org.springframework.web.bind.annotation.*;
 public class NoticeInfoController extends BaseController<NoticeInfoService, NoticeInfo>{
 
     @Resource
-    private RabbitMQComponent rabbitMQComponent;
+    private RabbitMQ_Notice rabbitMQNotice;
+    @Resource
+    private ExecutorService executorService;
 
     @Override
     @GetMapping("/{id}")
@@ -55,21 +58,21 @@ public class NoticeInfoController extends BaseController<NoticeInfoService, Noti
     @PostMapping("/")
     protected Result baseAdd(@RequestBody @Validated(AddAndEditGroup.class) NoticeInfo noticeInfo) {
         Result result = super.baseAdd(noticeInfo);
-        rabbitMQComponent.sendMsg(noticeInfo,"INSERT");
+        executorService.submit(()->rabbitMQNotice.sendMsg(noticeInfo,"INSERT"));
         return result;
     }
 
     @Override
     @PutMapping("/")
     protected Result baseEdit(@RequestBody @Validated(AddAndEditGroup.class) NoticeInfo noticeInfo) {
-        rabbitMQComponent.sendMsg(noticeInfo,"UPDATE");
+        executorService.submit(()->rabbitMQNotice.sendMsg(noticeInfo,"UPDATE"));
         return super.baseEdit(noticeInfo);
     }
 
     @Override
     @DeleteMapping("/{id}")
     protected Result baseDelById(@PathVariable Integer id) {
-        rabbitMQComponent.sendMsg(NoticeInfo.builder().noticeId(id).build(), "DELETE");
+        executorService.submit(()->rabbitMQNotice.sendMsg(NoticeInfo.builder().noticeId(id).build(),"DELETE"));
         return super.baseDelById(id);
     }
 

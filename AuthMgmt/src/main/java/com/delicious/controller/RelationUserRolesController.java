@@ -1,7 +1,7 @@
 package com.delicious.controller;
 
+import com.delicious.pojo.entity.auth.RelationUserRole;
 import com.delicious.pojo.Result;
-import com.delicious.pojo.entity.RelationUserRole;
 import com.delicious.service.RelationUserRolesService;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,7 +48,7 @@ public class RelationUserRolesController extends BaseController<RelationUserRole
 
     @Override
     @DeleteMapping("/{id}")
-    protected Result baseDelById(@PathVariable String id) {
+    protected Result baseDelById(@PathVariable Integer id) {
         return super.baseDelById(id);
     }
 
